@@ -1,1 +1,9 @@
+from pytube import *
 
+yt = YouTube(input('Cole aqui sua url: '))  # Asks for the YouTube URL
+
+print(yt.title)  # Prints the video title
+print(yt.thumbnail_url)  # Prints the thumbnail URL
+
+stream = yt.streams.get_highest_resolution()  # Selects the highest resolution stream
+stream.download()  # Downloads the video
